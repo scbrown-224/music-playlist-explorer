@@ -105,14 +105,9 @@ data.playlists.forEach(function(playlist){
     btn[i].addEventListener('click', () => {
       let curPlaylist = data.playlists[i];
   
-       
     
-  
       modal.style.display = 'block';
 
-      
-  
-   
   
   // Select the modal content container
   let modalContent = document.querySelector('.modal-content');
@@ -125,6 +120,11 @@ data.playlists.forEach(function(playlist){
   modalClose.className = 'close';
   modalClose.innerHTML = '&times';
   modalContent.appendChild(modalClose);
+
+  // Add event listener for the dynamically created close button
+  modalClose.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
   
   // Create modal header container
   let modalHeader = document.createElement('div');
