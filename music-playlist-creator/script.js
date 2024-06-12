@@ -37,6 +37,7 @@
 // setupModal("card8");
 
 
+
 data.playlists.forEach(function(playlist){
   let newPlaylist = document.createElement('div');
   newPlaylist.className = 'playlist-cards';
@@ -60,24 +61,27 @@ data.playlists.forEach(function(playlist){
   likeButton.className = 'likes';
   newPlaylist.appendChild(likeButton);
 
-
   let emojiCode = document.createElement('span');
-  emojiCode.className = 'likes';
-  emojiCode.innerHTML = '&#9829;'
+  emojiCode.className = 'heart-icon';
+  emojiCode.innerHTML = '&#x2665'
   likeButton.appendChild(emojiCode);
 
   let likeCount = document.createElement('span');
-  likeCount.className = 'likes';
+  likeCount.className = 'like-count';
   likeCount.textContent = playlist.likeCount;
   likeButton.appendChild(likeCount);
 
   let parent = document.querySelector(".all-playlists");
   parent.appendChild(newPlaylist);
+
+  // right here
+  
 });
 
 // modal code
 // assumes multiple classes so [0]
 var modal = document.getElementsByClassName("modal-overlay")[0];
+// button that opens the modal
 var btn = document.getElementsByClassName('playlist-img');
 var span = document.getElementsByClassName('close')[0];
 
@@ -93,9 +97,58 @@ window.onclick = function(event) {
 
 for(let i = 0; i < btn.length; ++i) {
   btn[i].addEventListener('click', () => {
+    let curPlaylist = data.playlists[i];
+
+     
+    // add click event listener specific to heart to like the playlist
+    // const heartIcon = document.querySelector('.heart-icon');
+    // heartIcon.addEventListener('click', (event) => {
+    //     // prevent click event from propogating to tile
+    //     event.stopPropogation();
+        
+    //     // increase like count
+    //     const likeCountElement = heartIcon.nextElementSibling;
+    //     let likeCount = parseInt(likeCountElement.textContent);
+    //     likeCount++;
+
+    //     heartIcon.classList.add('liked');
+    //     likeCountElement.textContent = likeCount;
+    // });
+
     modal.style.display = 'block';
 
-    let curPlaylist = data.playlists[i];
+ 
+
+// Select the modal content container
+let modalContent = document.querySelector('.modal-content');
+
+// Create modal header container
+let modalHeader = document.createElement('div');
+modalHeader.className = 'modal-header';
+modalContent.appendChild(modalHeader);
+
+// Create image inside modal header
+let modalImg = document.createElement('img');
+modalImg.className = 'modal-img';
+modalImg.src = curPlaylist.playlist_art;
+modalHeader.appendChild(modalImg);
+
+// Create header text container
+let headerText = document.createElement('div');
+headerText.className = 'header-text';
+modalHeader.appendChild(headerText);
+
+// Create playlist title
+let playlistTitle = document.createElement('h2');
+playlistTitle.textContent = curPlaylist.playlist_name;
+headerText.appendChild(playlistTitle);
+
+// Create artist name
+let artistName = document.createElement('h3');
+artistName.textContent = curPlaylist.playlist_creator;
+headerText.appendChild(artistName);
+
+
 
     curPlaylist.songs.forEach(function(song){
 
@@ -201,7 +254,7 @@ for(let i = 0; i < btn.length; ++i) {
 
                 <!-- Modal content -->
                     <div class="modal-content">
-                        <span class="close">&times;</span>
+                `        <span class="close">&times;</span>
                             <div class="modal-header">
                                 <img id="img1" class="modal-img" src="/music-playlist-creator/assets/img/playlist.png">
                                 <div class="header-text">

@@ -160,6 +160,37 @@ footer {
 }
 
 
+.heart-icon {
+    color: gray;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .heart-icon:hover {
+    color: red;
+  }
+
+  /* Hidden checkbox */
+.like-checkbox {
+    display: none;
+  }
+  
+  /* Change color when the checkbox is checked */
+  .like-checkbox:checked + .heart-icon {
+    color: red;
+  }
+  
+  /* .heart-icon.liked {
+    color: yellow;
+} */ */
+
+.like-count {
+    color: purple;
+}
+
+
+
+
 
 
   /* colors i like: 
