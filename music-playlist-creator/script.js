@@ -70,7 +70,7 @@ data.playlists.forEach(function(playlist){
 });
 
 // modal code
-// assumes multiple classes
+// assumes multiple classes so [0]
 var modal = document.getElementsByClassName("modal-overlay")[0];
 var btn = document.getElementsByClassName('playlist-img');
 var span = document.getElementsByClassName('close')[0];
@@ -89,11 +89,62 @@ for(let i = 0; i < btn.length; ++i) {
   btn[i].addEventListener('click', () => {
     modal.style.display = 'block';
 
-    data.playlists.forEach(function(playlist) {
+    let curPlaylist = data.playlists[i];
 
-    });
+    curPlaylist.songs.forEach(function(song){
+
+
+        // we want to insert into modal content
+        let modalBody = document.createElement('div');
+        modalBody.className = 'modal-body';
+
+        let newSong = document.createElement('div');
+        newSong.className = 'modal-song-card';
+        modalBody.appendChild(newSong);
+
+        let songImg = document.createElement('img');
+        songImg.className = 'modal-song';
+        songImg.src = song.cover_art;
+        newSong.appendChild(songImg);
+
+
+        let modalBodyText = document.createElement('div');
+        modalBodyText.className = 'modal-body-text';
+
+        
+        let songTitle = document.createElement('h3');
+        songTitle.textContent = song.title;
+        modalBodyText.appendChild(songTitle);
+        let songArtist = document.createElement('p');
+        songArtist.textContent = song.artist;
+        modalBodyText.appendChild(songArtist);
+        let songAlbum = document.createElement('p');
+        songAlbum.textContent = song.album;
+        modalBodyText.appendChild(songAlbum);
+
+       newSong.appendChild(modalBodyText);
+
+
+        let modalTime = document.createElement('div');
+        modalTime.className = 'modal-time'
+        let duration = document.createElement('p');
+        duration.textContent = song.duration;
+        modalBody.appendChild(modalTime);
+
+        let songParent = document.querySelector('.modal-content');
+        songParent.appendChild(modalBody);
+
+    })
+    // let newPlaylist = document.createElement('div');
+    // newPlaylist.className = 'playlist-cards';
+  
+    // let playlistImg = document.createElement('img');
+    // playlistImg.className = 'playlist-img';
+    // playlistImg.src = playlist.playlist_art;
+    // newPlaylist.appendChild(playlistImg);
   })
 }
+
 
 
 
