@@ -153,6 +153,15 @@ footer {
 }
 
 
+.likes span:hover {
+  color: red; /* Change to red on hover */
+}
+
+.likes span:active {
+  color: red; /* Change to red on click */
+}
+
+
 
   /* colors i like: 
   .first-color { 

@@ -1,78 +1,83 @@
-// Get the modal
-var modal = document.getElementById("myModal");
+// // Get the modal
+// var modal = document.getElementById("myModal");
 
-function setupModal(buttonId) {
+// function setupModal(buttonId) {
 
-  // Get the button that opens the modal
-  var btn = document.getElementById(buttonId);
+//   // Get the button that opens the modal
+//   var btn = document.getElementById(buttonId);
 
-  // Get the <span> element that closes the modal
-  var span = modal.getElementsByClassName("close")[0];
+//   // Get the <span> element that closes the modal
+//   var span = modal.getElementsByClassName("close")[0];
 
-  // When the user clicks on the button, open the modal
-  btn.onclick = function() {
-    modal.style.display = "block";
-  }
+//   // When the user clicks on the button, open the modal
+//   btn.onclick = function() {
+//     modal.style.display = "block";
+//   }
 
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
+//   // When the user clicks on <span> (x), close the modal
+//   span.onclick = function() {
+//     modal.style.display = "none";
+//   }
 
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-}
+//   // When the user clicks anywhere outside of the modal, close it
+//   window.onclick = function(event) {
+//     if (event.target == modal) {
+//       modal.style.display = "none";
+//     }
+//   }
+// }
 
-setupModal("card1");
-setupModal("card2");
-setupModal("card3");
-setupModal("card4");
-setupModal("card5");
-setupModal("card6");
-setupModal("card7");
-setupModal("card8");
+// setupModal("card1");
+// setupModal("card2");
+// setupModal("card3");
+// setupModal("card4");
+// setupModal("card5");
+// setupModal("card6");
+// setupModal("card7");
+// setupModal("card8");
 
 
 data.playlists.forEach(function(playlist){
-  let test = `<div class="playlist-cards" id="card1"> 
+  let newPlaylist = document.createElement('div');
+  newPlaylist.className = 'playlist-cards';
+
+  let playlistImg = document.createElement('img');
+  playlistImg.className = 'playlist-img';
+  playlistImg.src = playlist.playlist_art;
+  newPlaylist.appendChild(playlistImg);
+
+  let playlistTitle = document.createElement('h3');
+  playlistTitle.className = 'playlist-title';
+  playlistTitle.textContent = playlist.playlist_name;
+  newPlaylist.appendChild(playlistTitle);
+
+  let artistName = document.createElement('p');
+  artistName.className = 'artist-name';
+  artistName.textContent = playlist.playlist_creator;
+  newPlaylist.appendChild(artistName);
+
+  let likeButton = document.createElement('div');
+  likeButton.className = 'likes';
+  let emojiCode = document.createElement('span');
+  emojiCode.textContent = '&#9825;'
+  newPlaylist.appendChild(likeButton);
+
+  let parent = document.querySelector(".all-playlists");
+  parent.appendChild(newPlaylist);
+});
+
+/*let test = `<div class="playlist-cards" id="card1"> 
                 <img class="playlist-img" src="${playlist.playlist_art}">
                 <h3 class="playlist-title">${playlist.playlist_name}</h3>
                 <p class="artist-name">${playlist.playlist_creator}</p>
                 <div class="likes">
                     <span>&#9825;</span>
-                </div> </div>
-
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-
-                <!-- Modal content -->
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                            <div class="modal-header">
-                                <img id="img1" class="modal-img" src="${playlist.playlist_art}">
-                                <div class="header-text">
-                                    <h2 id="name1">${playlist.playlist_name}</h2>
-                                    <h3>${playlist.playlist_creator}</h3>
-                                </div>
-                            
-                            </div>
-                            <div class="modal-body">
-                                
-                            </div>
-                    </div>
+                </div> 
                 </div>`;
   
   let all_playlists_div = document.getElementsByClassName("all-playlists");
   all_playlists_div[0].innerHTML += test;
-  
-  
-  
-  
-  
+  */
   
   // console.log(playlist);
 
@@ -166,4 +171,5 @@ data.playlists.forEach(function(playlist){
   let likes_img = document.createElement('span');
 */
 
-});
+
+
