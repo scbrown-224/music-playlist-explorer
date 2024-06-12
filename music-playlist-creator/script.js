@@ -62,8 +62,14 @@ data.playlists.forEach(function(playlist){
 
 
   let emojiCode = document.createElement('span');
-  emojiCode.textContent = '❤️'
-  newPlaylist.appendChild(emojiCode);
+  emojiCode.className = 'likes';
+  emojiCode.innerHTML = '&#9829;'
+  likeButton.appendChild(emojiCode);
+
+  let likeCount = document.createElement('span');
+  likeCount.className = 'likes';
+  likeCount.textContent = playlist.likeCount;
+  likeButton.appendChild(likeCount);
 
   let parent = document.querySelector(".all-playlists");
   parent.appendChild(newPlaylist);

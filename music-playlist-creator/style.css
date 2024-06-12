@@ -153,14 +153,12 @@ footer {
     flex-wrap: wrap;
 }
 
-
-.likes span:hover {
-  color: red; /* Change to red on hover */
+.likes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.likes span:active {
-  color: red; /* Change to red on click */
-}
 
 
 
