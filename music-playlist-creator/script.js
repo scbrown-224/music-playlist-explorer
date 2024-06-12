@@ -73,11 +73,14 @@ data.playlists.forEach(function(playlist){
   
     let parent = document.querySelector(".all-playlists");
     parent.appendChild(newPlaylist);
+
   
     // right here
     
   });
   
+
+
   // modal code
   // assumes multiple classes so [0]
   var modal = document.getElementsByClassName("modal-overlay")[0];
@@ -88,6 +91,8 @@ data.playlists.forEach(function(playlist){
   span.addEventListener('click', () => {
     modal.style.display = 'none';
   });
+
+
   
   window.onclick = function(event) {
         if (event.target == modal) {
@@ -96,26 +101,16 @@ data.playlists.forEach(function(playlist){
       }
   
   for(let i = 0; i < btn.length; ++i) {
+    
     btn[i].addEventListener('click', () => {
       let curPlaylist = data.playlists[i];
   
        
-      // add click event listener specific to heart to like the playlist
-      // const heartIcon = document.querySelector('.heart-icon');
-      // heartIcon.addEventListener('click', (event) => {
-      //     // prevent click event from propogating to tile
-      //     event.stopPropogation();
-          
-      //     // increase like count
-      //     const likeCountElement = heartIcon.nextElementSibling;
-      //     let likeCount = parseInt(likeCountElement.textContent);
-      //     likeCount++;
-  
-      //     heartIcon.classList.add('liked');
-      //     likeCountElement.textContent = likeCount;
-      // });
+    
   
       modal.style.display = 'block';
+
+      
   
    
   
@@ -124,6 +119,12 @@ data.playlists.forEach(function(playlist){
 
   // Clear existing content in the modal
   modalContent.innerHTML = '';
+
+  // modal close stuff
+  let modalClose = document.createElement('span');
+  modalClose.className = 'close';
+  modalClose.innerHTML = '&times';
+  modalContent.appendChild(modalClose);
   
   // Create modal header container
   let modalHeader = document.createElement('div');
@@ -196,16 +197,31 @@ data.playlists.forEach(function(playlist){
           let songParent = document.querySelector('.modal-content');
           songParent.appendChild(modalBody);
   
-      })
-      // let newPlaylist = document.createElement('div');
-      // newPlaylist.className = 'playlist-cards';
-    
-      // let playlistImg = document.createElement('img');
-      // playlistImg.className = 'playlist-img';
-      // playlistImg.src = playlist.playlist_art;
-      // newPlaylist.appendChild(playlistImg);
-    })
+      });
+
+    });
   }
+
+//   //working for 1
+  let hearts = document.querySelectorAll('.heart-icon');
+
+  hearts.forEach((heart) => {
+    heart.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const likeCountElement = heart.nextElementSibling;
+        let likeCount = parseInt(likeCountElement.textContent);
+        likeCount++;
+        heart.classList.add('liked');
+        likeCountElement.textContent = likeCount;
+      });
+  });
+
+    
+
+
+  
+
+
   
   
   
