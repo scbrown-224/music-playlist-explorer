@@ -58,13 +58,46 @@ data.playlists.forEach(function(playlist){
 
   let likeButton = document.createElement('div');
   likeButton.className = 'likes';
-  let emojiCode = document.createElement('span');
-  emojiCode.textContent = '&#9825;'
   newPlaylist.appendChild(likeButton);
+
+
+  let emojiCode = document.createElement('span');
+  emojiCode.textContent = '❤️'
+  newPlaylist.appendChild(emojiCode);
 
   let parent = document.querySelector(".all-playlists");
   parent.appendChild(newPlaylist);
 });
+
+// modal code
+// assumes multiple classes
+var modal = document.getElementsByClassName("modal-overlay")[0];
+var btn = document.getElementsByClassName('playlist-img');
+var span = document.getElementsByClassName('close')[0];
+
+span.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+for(let i = 0; i < btn.length; ++i) {
+  btn[i].addEventListener('click', () => {
+    modal.style.display = 'block';
+
+    data.playlists.forEach(function(playlist) {
+
+    });
+  })
+}
+
+
+
+
 
 /*let test = `<div class="playlist-cards" id="card1"> 
                 <img class="playlist-img" src="${playlist.playlist_art}">
