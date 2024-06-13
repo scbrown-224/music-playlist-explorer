@@ -62,6 +62,16 @@ playlistRandom.songs.forEach(song => {
     let songAlbum = document.createElement('p');
     songAlbum.textContent = song.album;
     featureSongText.appendChild(songAlbum);
+
+    let songTime = document.createElement('div');
+    songTime.className = 'song-duration';
+    // songTime.className = 'modal-time';
+    let duration = document.createElement('p');
+    duration.textContent = song.duration;        
+    songTime.appendChild(duration);
+    featuredSongCard.appendChild(songTime);
+
+    
 });
 
 
