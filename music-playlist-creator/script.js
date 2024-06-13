@@ -167,11 +167,14 @@ for(let i = 0; i < btn.length; ++i) {
 
         newSong.appendChild(modalBodyText);
 
+        
+
         let modalTime = document.createElement('div');
         modalTime.className = 'modal-time';
         let duration = document.createElement('p');
         duration.textContent = song.duration;
-        modalBody.appendChild(modalTime);
+        modalTime.appendChild(duration);
+        modalBodyText.appendChild(modalTime);
 
         modalContent.appendChild(modalBody);
         });
