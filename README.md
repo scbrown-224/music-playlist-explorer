@@ -64,15 +64,15 @@ Deployed Application (optional): [Music Playlist Explorer Deployed Site](ADD_LIN
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+Yes, the topics from lab definetely related to the project. However, I didn't really get that far in the labs during the assigned times, but I often referred back to them. Specifically, the content we learned on the DOM and manually adding to the HTML via javascript files was pretty helpful
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If I had more time, I would definetely spend more time on the CSS of the featured page. I kind of had to rush it at the end, so I didn't get to structure it properly. Also, I would try to pursue some of the stretch features, specifically the search button and the add/delete playlist functionality. I also would've done the structuring completely different. I think I wasted way too much time wireframing things manually that we ended up doing with a diffferent method later. I think I should have read ahead to better balance my time.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I think my demo went well! I feel more comfortable in front of my peers. I wish I had cuter visuals and my feature page so I had more to talk about to fill the time because I received feedback saying I talked too long about a feature I hadn't finished yet
 
 ### Open-source libraries used
 
@@ -81,3 +81,4 @@ Add your response here
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+SHOUT OUT TO KARINA, KIAHNA, ANDY, ALEX, DEVARSH, AND CHRIS!
