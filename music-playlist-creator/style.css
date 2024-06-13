@@ -268,6 +268,42 @@ ul {
 .featuredSongText {
     padding: 10px;
 }
+.nav {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav li {
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav li a:hover {
+    background-color: #f0f0f0;
+    color: black; /* Adjust the hover color if needed */
+    width: 200px;
+}
+
+.nav li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    height: 24px;
+    width: 1px;
+    background-color: black;
+    transform: translateX(50%);
+}
+
 
 
 /*

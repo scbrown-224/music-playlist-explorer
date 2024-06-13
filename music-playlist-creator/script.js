@@ -1,4 +1,5 @@
 
+
 // playlist elements
 data.playlists.forEach(function(playlist){
     let newPlaylist = document.createElement('div');
@@ -204,6 +205,5 @@ hearts.forEach((heart) => {
 
   
   
-
 
 
