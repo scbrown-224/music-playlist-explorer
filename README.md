@@ -1,10 +1,10 @@
 ## Unit Assignment: Music Playlist Explorer
 
-Submitted by: **NAME**
+Submitted by: Sydney Brown
 
-Estimated time spent: **#** hours spent in total
+Estimated time spent: 20 hours spent in total
 
-Deployed Application (optional): [Music Playlist Explorer Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): didn't deploy
 
 ### Application Features
 
