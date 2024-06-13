@@ -191,16 +191,26 @@ for(let i = 0; i < btn.length; ++i) {
 let hearts = document.querySelectorAll('.heart-icon');
 // query selector all gets the entire arrau
 
+
+
 hearts.forEach((heart) => {
     heart.addEventListener('click', (event) => {
         event.stopPropagation();
         const likeCountElement = heart.nextElementSibling;
         let likeCount = parseInt(likeCountElement.textContent);
-        likeCount++;
-        heart.classList.add('liked');
+
+        if (heart.classList.contains('liked')) {
+            likeCount--;
+            heart.classList.remove('liked');
+        } else {
+            likeCount++;
+            heart.classList.add('liked');
+        }
+
         likeCountElement.textContent = likeCount;
     });
 });
+
 
 // working code stops here
 

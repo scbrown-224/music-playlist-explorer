@@ -301,6 +301,9 @@ ul {
     margin-bottom: 200px;
     justify-content: center;
     margin-right: 100px;
+    height: 20%;
+    margin-top: 0px;
+    padding: 0px;
 }
 
 .playlist-info {
